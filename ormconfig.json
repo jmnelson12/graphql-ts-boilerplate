@@ -4,8 +4,8 @@
   "host": "localhost",
   "port": 5432,
   "username": "postgres",
-  "password": "postgres",
-  "database": "typegraphql-example",
+  "password": "password",
+  "database": "graphql-typescript-boilerplate",
   "synchronize": true,
   "logging": true,
   "entities": ["src/entity/*.*"]

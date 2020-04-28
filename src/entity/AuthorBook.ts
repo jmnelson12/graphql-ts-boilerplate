@@ -3,10 +3,10 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
-  PrimaryColumn
-} from "typeorm";
-import { Author } from "./Author";
-import { Book } from "./Book";
+  PrimaryColumn,
+} from 'typeorm';
+import { Author } from './Author';
+import { Book } from './Book';
 
 @Entity()
 export class AuthorBook extends BaseEntity {
@@ -16,13 +16,13 @@ export class AuthorBook extends BaseEntity {
   @PrimaryColumn()
   bookId: number;
 
-  @ManyToOne(() => Author, author => author.bookConnection, { primary: true })
-  @JoinColumn({ name: "authorId" })
+  @ManyToOne(() => Author, (author) => author.bookConnection, { primary: true })
+  @JoinColumn({ name: 'authorId' })
   author: Promise<Author>;
 
-  @ManyToOne(() => Book, book => book.authorConnection, {
-    primary: true
+  @ManyToOne(() => Book, (book) => book.authorConnection, {
+    primary: true,
   })
-  @JoinColumn({ name: "bookId" })
+  @JoinColumn({ name: 'bookId' })
   book: Promise<Book>;
 }
